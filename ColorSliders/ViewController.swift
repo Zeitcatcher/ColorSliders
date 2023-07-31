@@ -25,9 +25,7 @@ class ViewController: UIViewController {
         colorView.layer.cornerRadius = 15
         colorSetup()
         
-        redLabel.text = String(format: "%.2f", redSlider.value)
-        greenLabel.text = String(format: "%.2f", greenSlider.value)
-        blueLabel.text = String(format: "%.2f", blueSlider.value)
+        setValue(for: redLabel, greenLabel, blueLabel)
     }
 
     @IBAction func rgbSliderChange(_ sender: UISlider) {
@@ -46,9 +44,22 @@ class ViewController: UIViewController {
 
 extension ViewController {
     private func string(from slider: UISlider) -> String {
-        let textSliderValue = String(format: "%.2f", slider.value)
-        
-        return textSliderValue
+        String(format: "%.2f", slider.value)
+    }
+}
+
+extension ViewController {
+    private func setValue(for lables: UILabel...) {
+        lables.forEach { label in
+            switch label {
+            case redLabel:
+                redLabel.text = string(from: redSlider)
+            case greenLabel:
+                greenLabel.text = string(from: greenSlider)
+            default:
+                blueLabel.text = string(from: blueSlider)
+            }
+        }
     }
 }
 
