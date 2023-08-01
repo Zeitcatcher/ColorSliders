@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         
         colorView.layer.cornerRadius = 15
         colorSetup()
-        
         setValue(for: redLabel, greenLabel, blueLabel)
     }
 
@@ -46,9 +45,7 @@ extension ViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
-}
-
-extension ViewController {
+    
     private func setValue(for lables: UILabel...) {
         lables.forEach { label in
             switch label {
@@ -61,9 +58,7 @@ extension ViewController {
             }
         }
     }
-}
-
-extension ViewController {
+    
     private func colorSetup() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
