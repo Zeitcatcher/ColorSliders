@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView!
     
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension SettingsViewController {
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
