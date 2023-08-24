@@ -39,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D91DD51C2A97F5EE004704E9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D976B15F2A776B78009A2B0C /* AppDelegate.swift */,
+				D976B1612A776B78009A2B0C /* SceneDelegate.swift */,
+				D976B16D2A776B79009A2B0C /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D91DD51D2A97F5F9004704E9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D91DD51A2A97F476004704E9 /* ColorViewController.swift */,
+				D976B1632A776B78009A2B0C /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D91DD51E2A97F60F004704E9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D976B1652A776B78009A2B0C /* Main.storyboard */,
+				D976B16A2A776B79009A2B0C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D91DD51F2A97F624004704E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D976B1682A776B79009A2B0C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D976B1532A776B78009A2B0C = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +94,10 @@
 		D976B15E2A776B78009A2B0C /* ColorSliders */ = {
 			isa = PBXGroup;
 			children = (
-				D976B15F2A776B78009A2B0C /* AppDelegate.swift */,
-				D976B1612A776B78009A2B0C /* SceneDelegate.swift */,
-				D976B1632A776B78009A2B0C /* SettingsViewController.swift */,
-				D976B1652A776B78009A2B0C /* Main.storyboard */,
-				D91DD51A2A97F476004704E9 /* ColorViewController.swift */,
-				D976B1682A776B79009A2B0C /* Assets.xcassets */,
-				D976B16A2A776B79009A2B0C /* LaunchScreen.storyboard */,
-				D976B16D2A776B79009A2B0C /* Info.plist */,
+				D91DD51C2A97F5EE004704E9 /* App */,
+				D91DD51D2A97F5F9004704E9 /* ViewControllers */,
+				D91DD51E2A97F60F004704E9 /* Storyboards */,
+				D91DD51F2A97F624004704E9 /* Resources */,
 			);
 			path = ColorSliders;
 			sourceTree = "<group>";
@@ -293,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NTDP5U69GA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ColorSliders/Info.plist;
+				INFOPLIST_FILE = ColorSliders/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,7 +356,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NTDP5U69GA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ColorSliders/Info.plist;
+				INFOPLIST_FILE = ColorSliders/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

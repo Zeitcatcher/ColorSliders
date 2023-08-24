@@ -19,12 +19,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="MPw-tq-iBo">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="mZr-Uh-enP">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="mZr-Uh-enP">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="h14-O3-F5w"/>
+                                <action selector="settingsButtonPressed:" destination="Pdh-9U-NgB" id="2Xg-Tj-91V"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showSettingsViewController" id="D9b-cd-mNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Urp-Cb-zUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

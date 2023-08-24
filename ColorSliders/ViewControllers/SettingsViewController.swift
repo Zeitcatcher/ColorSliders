@@ -19,6 +19,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    var viewColor: UIColor!
+    var redColor: Int!
+    var greenColor: Int!
+    var blueColor: Int!
+    var alpha: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,5 +71,9 @@ extension SettingsViewController {
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1)
+    }
+    
+    private func setupColorSliders(with color: UIColor) {
+        
     }
 }
