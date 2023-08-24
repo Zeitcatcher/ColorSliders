@@ -20,14 +20,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     
     var viewColor: UIColor!
-    var redColor: Int!
-    var greenColor: Int!
-    var blueColor: Int!
-    var alpha: Int!
+    var delegate: ColorViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupColorSliders(with: viewColor)
         colorView.layer.cornerRadius = 15
         colorSetup()
         setValue(for: redLabel, greenLabel, blueLabel)
@@ -44,6 +42,13 @@ class SettingsViewController: UIViewController {
         default:
             blueLabel.text = string(from: sender)
         }
+    }
+    
+    @IBAction func doneButtonPressed() {
+        guard let color = colorView.backgroundColor else { return }
+        
+        delegate.backgroundColorSetup(with: color)
+        dismiss(animated: true)
     }
 }
 
@@ -74,6 +79,15 @@ extension SettingsViewController {
     }
     
     private func setupColorSliders(with color: UIColor) {
+        var redColor: CGFloat = 0
+        var greenColor: CGFloat = 0
+        var blueColor: CGFloat = 0
+        var alpha: CGFloat = 0
         
+        color.getRed(&redColor, green: &greenColor, blue: &blueColor, alpha: &alpha)
+        
+        redSlider.setValue(Float(redColor), animated: false)
+        greenSlider.setValue(Float(greenColor), animated: false)
+        blueSlider.setValue(Float(blueColor), animated: false)
     }
 }

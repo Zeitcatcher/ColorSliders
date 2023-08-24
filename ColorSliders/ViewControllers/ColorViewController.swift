@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ColorViewControllerDelegate {
+    func backgroundColorSetup(with color: UIColor)
+}
+
 class ColorViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -15,7 +19,7 @@ class ColorViewController: UIViewController {
     }
     
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
-        guard view.backgroundColor != nil else { return }
+//        guard view.backgroundColor != nil else { return }
         performSegue(withIdentifier: "showSettingsViewController", sender: nil)
     }
     
@@ -23,6 +27,7 @@ class ColorViewController: UIViewController {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         
         settingsVC.viewColor = view.backgroundColor
+        settingsVC.delegate = self
     }
     
     private func rgbColorSetup(red: Float = 1, green: Float = 1, blue: Float = 1, alpha: Float = 1) -> UIColor {
@@ -56,4 +61,10 @@ class ColorViewController: UIViewController {
 //
 //        return rgbComponents
 //    }
+}
+
+extension ColorViewController: ColorViewControllerDelegate {
+    func backgroundColorSetup(with color: UIColor) {
+        view.backgroundColor = color
+    }
 }
