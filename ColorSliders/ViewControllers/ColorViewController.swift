@@ -18,13 +18,8 @@ class ColorViewController: UIViewController {
         view.backgroundColor = rgbColorSetup()
     }
     
-    @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "showSettingsViewController", sender: nil)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
-        
         settingsVC.viewColor = view.backgroundColor
         settingsVC.delegate = self
     }
@@ -40,6 +35,7 @@ class ColorViewController: UIViewController {
     }
 }
 
+//MARK: ColorViewControllerDelegate
 extension ColorViewController: ColorViewControllerDelegate {
     func backgroundColorSetup(with color: UIColor) {
         view.backgroundColor = color
