@@ -19,13 +19,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    @IBOutlet weak var redTextField: UITextField!
+    @IBOutlet weak var greenTextField: UITextField!
+    @IBOutlet weak var blueTextField: UITextField!
+    
     var viewColor: UIColor!
     var delegate: ColorViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupColorSliders(with: viewColor)
+        setupTextFieldsFromSliders(with: redSlider, greenColor: greenSlider, blueColor: blueSlider)
         colorView.layer.cornerRadius = 15
         colorSetup()
         setValue(for: redLabel, greenLabel, blueLabel)
@@ -36,11 +41,14 @@ class SettingsViewController: UIViewController {
         
         switch sender {
         case redSlider:
-            redLabel.text = string(from: sender)
+            redLabel.text = string(from: sender);
+            redTextField.text = string(from: sender)
         case greenSlider:
-            greenLabel.text = string(from: sender)
+            greenLabel.text = string(from: sender);
+            greenTextField.text = string(from: sender)
         default:
-            blueLabel.text = string(from: sender)
+            blueLabel.text = string(from: sender);
+            blueTextField.text = string(from: sender)
         }
     }
     
@@ -90,4 +98,23 @@ extension SettingsViewController {
         greenSlider.setValue(Float(greenColor), animated: false)
         blueSlider.setValue(Float(blueColor), animated: false)
     }
+    
+    private func setupTextFieldsFromSliders(with redColor: UISlider, greenColor: UISlider, blueColor: UISlider) {
+        redTextField.text = string(from: redColor)
+        greenTextField.text = string(from: greenColor)
+        blueTextField.text = string(from: blueColor)
+    }
+    
+//    private func addingToolbarToKeyboard(to textfield: UITextField) {
+//        let toolbar = UIToolbar()
+//        
+//        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTapped))
+//        toolbar.setItems([doneButton], animated: false)
+//        textfield.inputAccessoryView = toolbar
+//
+//    }
+//
+//    @objc func doneButtonTapped(for textField: UITextField) {
+//        textField.resignFirstResponder()
+//    }
 }

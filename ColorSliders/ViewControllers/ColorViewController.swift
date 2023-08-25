@@ -19,7 +19,6 @@ class ColorViewController: UIViewController {
     }
     
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
-//        guard view.backgroundColor != nil else { return }
         performSegue(withIdentifier: "showSettingsViewController", sender: nil)
     }
     
@@ -39,28 +38,6 @@ class ColorViewController: UIViewController {
         )
         return finalColor
     }
-    
-//    private func getRGBComponents(color: UIColor?) -> [String: Float] {
-//        var rgbComponents: [String: Float] = [
-//            "Red": 0,
-//            "Green": 0,
-//            "Blue": 0,
-//            "Alpha": 0
-//        ]
-//
-//        var red: CGFloat = 0
-//        var green: CGFloat = 0
-//        var blue: CGFloat = 0
-//        var alpha: CGFloat = 0
-//
-//        color?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-//
-//        for (key, value) in rgbComponents {
-//            rgbComponents[key] = value
-//        }
-//
-//        return rgbComponents
-//    }
 }
 
 extension ColorViewController: ColorViewControllerDelegate {
